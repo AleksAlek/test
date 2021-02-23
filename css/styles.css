@@ -1,0 +1,380 @@
+﻿@font-face {
+  font-family: "PFDinTextCondPro-regular";
+  src: url("../fonts/pfdintextcondpro-regular.eot");
+  src: local("☺"), url("../fonts/pfdintextcondpro-regular.woff") format("woff"),
+    url("../fonts/pfdintextcondpro-regular.ttf") format("truetype"),
+    url("../fonts/pfdintextcondpro-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PFDinTextCondPro-medium";
+  src: url("../fonts/pfdintextcondpro-medium.eot");
+  src: local("☺"), url("../fonts/pfdintextcondpro-medium.woff") format("woff"),
+    url("../fonts/pfdintextcondpro-medium.ttf") format("truetype"),
+    url("../fonts/pfdintextcondpro-medium.svg") format("svg");
+  font-weight: 500; /* Нужно указать "500" здесь + указывать каждый раз при использовании, чтоб прогамма понимала, какие файлы подтягивать - из первого блока, где регулар, или с этого */
+  font-style: normal;
+}
+
+img {
+  display: block;
+}
+
+.first-text {
+  width: 600px;
+  text-indent: 40px;
+  text-align: justify;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-shadow: 2px 2px 4px #ff0000, 5px 5px 5px #000;
+  white-space: inherit;
+}
+
+.second-text {
+  width: 600px;
+  font-weight: 600;
+  font-style: italic;
+  font-family: "Garamond", sans-serif;
+}
+
+.third-text {
+  width: 600px;
+  color: #2a2a2a;
+}
+
+.third-text::first-letter {
+  font-size: 32px;
+  color: #f44336;
+}
+
+.third-text::selection {
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.fourth-text {
+  width: 600px;
+  font-family: "Caveat", cursive;
+}
+
+.test-text {
+  font-family: "PFDinTextCondPro-medium", sans-serif;
+}
+
+/* Флекс, работа с блоками */
+
+.box4-1 {
+  border: 1px solid black;
+  padding: 10px;
+  width: 500px;
+  background-color: green;
+}
+
+.box4-2 {
+  border: 1px solid black;
+  padding: 10px;
+  width: 500px;
+  background-color: orange;
+  box-sizing: content-box;
+}
+
+.box4-3 {
+  box-sizing: border-box;
+
+  border: 1px solid black;
+  padding: 10px;
+  background-color: burlywood;
+  width: 500px; /* ВАЖНО! При border-box конечная ширина контента не будет 500px, а будет 500-10(паддинг слева)-10(паддинг справа)-1(бордер слева)-1(бордер справа)=478px */
+}
+
+.box4-4-1 {
+  box-sizing: border-box;
+
+  border: 1px solid black;
+  padding: 10px;
+  background-color: blueviolet;
+  width: 500px;
+  margin-bottom: 20px; /* Будет применяться 40px, а не 20px, так как марджины не плюсуются */
+}
+
+.box4-4-2 {
+  box-sizing: border-box;
+
+  border: 1px solid black;
+  padding: 10px;
+  background-color: blueviolet;
+  width: 500px;
+  margin-top: 40px; /* Будет применяться 40px, а не 20px, так как марджины не плюсуются */
+}
+
+.box4-5 {
+  box-sizing: border-box;
+
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: greenyellow;
+  width: 500px;
+}
+
+.div-center {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.decorated-link {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 3px;
+
+  background-color: teal;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Бэкграунд */
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 40px;
+  background-image: url("https://cdn.pixabay.com/photo/2020/10/07/10/51/mountains-5634817_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /*  Закомментируйте эту строку  */
+  background-attachment: fixed;
+}
+
+.box::before {
+  content: "Это текст в ::before";
+  font-size: 40px;
+  color: orange;
+}
+
+.box::after {
+  content: "Это текст в ::after";
+  font-size: 30px;
+  color: teal;
+}
+
+/* Применить стили к псевдоэлементу .box::before при ховере по элементу .box */
+.box:hover::before {
+  color: green;
+}
+
+/* Применить стили к псевдоэлементу .box::after при ховере по элементу .box */
+.box:hover::after {
+  color: tomato;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #2a2a2a;
+}
+
+.list {
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+.list-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.list-link {
+  display: inline-flex;
+  align-items: center;
+  color: currentColor;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+/* Менять тип не обязательно, потому что это flex-элемент, ссылка это flex-контейнер */
+.list-link::before,
+.list-link::after {
+  display: inline-block;
+  content: "";
+  width: 24px;
+  height: 24px;
+}
+
+/* Добавляем иконку огня перед текстом ссылки */
+.list-link::before {
+  margin-right: 16px;
+  background-image: url("https://image.flaticon.com/icons/svg/785/785116.svg");
+}
+
+/* Добавляем и прячем иконку кота после текста ссылки */
+.list-link::after {
+  display: none;
+  margin-left: 16px;
+  background-image: url("https://image.flaticon.com/icons/svg/616/616430.svg");
+}
+
+.list-link:hover {
+  color: #2196f3;
+}
+
+/* Показываем иконку кота при ховере по ссылке */
+.list-link:hover::after {
+  display: block;
+}
+
+:root {
+  --start-color: blue;
+  --end-color: red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.tile-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tile {
+  height: 200px;
+  flex-basis: calc(50% - 10px);
+  margin: 5px;
+  border-radius: 4px;
+  background-color: #9e9e9e;
+
+  text-align: center;
+  line-height: 200px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 24px;
+  letter-spacing: -0.05em;
+
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.tile:nth-child(1) {
+  background-image: linear-gradient(
+    to bottom,
+    var(--start-color),
+    var(--end-color)
+  );
+}
+
+.tile:nth-child(2) {
+  background-image: linear-gradient(
+    to top,
+    var(--start-color),
+    var(--end-color)
+  );
+}
+
+.tile:nth-child(3) {
+  background-image: linear-gradient(
+    to right,
+    var(--start-color),
+    var(--end-color)
+  );
+}
+
+.tile:nth-child(4) {
+  background-image: linear-gradient(
+    to top left,
+    var(--start-color),
+    var(--end-color)
+  );
+}
+
+.box-gradient {
+  margin: 100px;
+  width: 300px;
+  height: 300px;
+
+  /* background-image: linear-gradient(
+    to right top,
+    #f44336 15%,
+    #09792b 40%,
+    #00b9ff 65%,
+    #ffb800
+  ); */
+
+  /* background-image: linear-gradient(
+    to right bottom,
+    #c64f4f 15%,
+    #09792b 15%,
+    #09792b 40%,
+    #00b9ff 40%,
+    #00b9ff 65%,
+    #ffb800 65%
+  ); */
+
+  /* background-image: repeating-linear-gradient(
+  to left,
+  blue,
+  blue 20px,
+  red 20px,
+  red 40px,
+  green 40px,
+  green 60px */
+  
+  /* Опеределяет размер градиента */
+);
+
+/* background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(219,236,236,1) 36%, rgba(181,232,239,1) 44%, rgba(164,230,241,1) 52%, rgba(137,227,243,1) 60%, rgba(99,223,246,1) 71%, rgba(0,212,255,1) 100%); */
+
+/* background: #7F7FD5;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+padding: 5em; /* size */
+background: conic-gradient(gold 40%, #f06 0);
+border-radius: 50%; /* make it round */
+
+}
+
+.facebook-icon {
+  display: inline-flex;
+  width: 200px;
+  height: 200px;
+  background-image: url("https://image.flaticon.com/icons/svg/145/145802.svg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.facebook-icon {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.facebook-icon:hover > .circle {
+  fill: #C97064;
+}
+
+.circle {
+  fill: #3b5998;
+}
+
+.letter {
+  fill: #F4FFF8;
+}
